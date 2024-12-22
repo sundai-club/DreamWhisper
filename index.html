@@ -4,60 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Landing Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
     <style>
         :root {
-            --claude-purple: #6854CC;
-            --claude-purple-light: #8A7FD8;
-            --claude-text: #1A1825;
-            --claude-gray-light: #F5F5F8;
-            --claude-gray: #E5E5EC;
+            --background-dark: #0A0612;
+            --purple-glow: #8A5CF5;
+            --purple-dark: #3B2C66;
+            --text-light: #FFFFFF;
+            --text-dim: rgba(255, 255, 255, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: var(--claude-text);
-            background-color: white;
+            color: var(--text-light);
+            background-color: var(--background-dark);
+            background: radial-gradient(circle at top right, var(--purple-dark) -50%, var(--background-dark) 45%);
+            min-height: 100vh;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
         }
         
         header {
-            background-color: var(--claude-purple);
-            color: white;
-            padding: 3rem 0;
+            padding: 4rem 0;
             text-align: center;
+            background: linear-gradient(180deg, rgba(138, 92, 245, 0.15) 0%, rgba(138, 92, 245, 0) 100%);
+            position: relative;
+            overflow: hidden;
         }
         
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, var(--purple-glow) 0%, transparent 70%);
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         h1, h2, h3 {
             font-weight: 600;
             letter-spacing: -0.02em;
+            margin: 0;
         }
 
         h1 {
             font-size: 2.5rem;
+            font-weight: 500;
             margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--text-light), var(--purple-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         h2 {
-            font-size: 1.875rem;
-            color: var(--claude-text);
+            font-size: 2rem;
+            color: var(--text-light);
+            margin: 3rem 0 1.5rem;
         }
 
         h3 {
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
+            color: var(--purple-glow);
         }
         
         .main-content {
             padding: 3rem 0;
+            position: relative;
+            z-index: 1;
         }
         
         .features {
@@ -68,63 +99,68 @@
         }
         
         .feature-card {
-            background-color: var(--claude-gray-light);
+            background-color: var(--card-bg);
             padding: 1.5rem;
             border-radius: 12px;
-            border: 1px solid var(--claude-gray);
-            transition: transform 0.2s ease;
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .feature-card:hover {
             transform: translateY(-2px);
+            border-color: var(--purple-glow);
+            box-shadow: 0 0 20px rgba(138, 92, 245, 0.1);
         }
         
         footer {
-            background-color: var(--claude-gray-light);
-            color: var(--claude-text);
+            background-color: rgba(0, 0, 0, 0.3);
             text-align: center;
             padding: 1rem 0;
             position: fixed;
             bottom: 0;
             width: 100%;
-            border-top: 1px solid var(--claude-gray);
+            border-top: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
         }
         
         .github-button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background-color: white;
-            color: var(--claude-purple);
+            background: linear-gradient(135deg, var(--purple-glow) 0%, var(--purple-dark) 100%);
+            color: var(--text-light);
             text-decoration: none;
             border-radius: 8px;
-            margin-top: 1rem;
-            transition: all 0.2s ease;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
             font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .github-button:hover {
-            background-color: rgba(255, 255, 255, 0.9);
             transform: translateY(-1px);
+            box-shadow: 0 0 20px rgba(138, 92, 245, 0.3);
         }
 
         p {
-            color: var(--claude-text);
-            font-size: 1rem;
-            line-height: 1.6;
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 1rem 0;
         }
 
         header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.125rem;
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 1rem auto;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Project Name</h1>
-            <p>A brief description of your awesome project</p>
+            <h1>DreamWhisper</h1>
+            <p>Share your dreams through voice, and let DreamWhisper guide you to their deeper meaning</p>
             <a href="https://github.com/yourusername/yourrepository" class="github-button">View on GitHub</a>
         </div>
     </header>
@@ -133,22 +169,23 @@
         <div class="container">
             <h2>About the Project</h2>
             <p>
-                Provide a detailed description of your project here. Explain what it does,
-                why it's useful, and what problems it solves.
+                Through carefully crafted questions about the people, places, and feelings in your dreams, 
+                it helps you uncover layers of personal significance you might have missed. Each dream becomes 
+                part of your unique spiritual journey, building a deeper understanding of your inner world.
             </p>
 
             <div class="features">
                 <div class="feature-card">
-                    <h3>Feature 1</h3>
-                    <p>Description of your first main feature.</p>
+                    <h3>Whisper Your Dreams</h3>
+                    <p>Voice record your morning memories, while our gentle guidance helps recover forgotten dream details.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Feature 2</h3>
-                    <p>Description of your second main feature.</p>
+                    <h3>Illuminate Hidden Meanings</h3>
+                    <p>Discover the significance of each dream element through a thoughtful dialogue that deepens with every interpretation.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Feature 3</h3>
-                    <p>Description of your third main feature.</p>
+                    <h3>Evolving Dream Wisdom</h3>
+                    <p>Your private dream journal grows wiser with each entry, revealing patterns in your spiritual journey through time.</p>
                 </div>
             </div>
 
@@ -162,8 +199,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2024 Your Project Name. Open source project.</p>
+            <p>© 2024 DreamWhisper. Open source project.</p>
         </div>
     </footer>
 </body>
-</html> 
+</html>
