@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Landing Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <style>
+        :root {
+            --claude-purple: #6854CC;
+            --claude-purple-light: #8A7FD8;
+            --claude-text: #1A1825;
+            --claude-gray-light: #F5F5F8;
+            --claude-gray: #E5E5EC;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--claude-text);
+            background-color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background-color: var(--claude-purple);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            color: var(--claude-text);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .main-content {
+            padding: 3rem 0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--claude-gray-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--claude-gray);
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: var(--claude-gray-light);
+            color: var(--claude-text);
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid var(--claude-gray);
+        }
+        
+        .github-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: white;
+            color: var(--claude-purple);
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 1rem;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .github-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-1px);
+        }
+
+        p {
+            color: var(--claude-text);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Project Name</h1>
+            <p>A brief description of your awesome project</p>
+            <a href="https://github.com/yourusername/yourrepository" class="github-button">View on GitHub</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2>About the Project</h2>
+            <p>
+                Provide a detailed description of your project here. Explain what it does,
+                why it's useful, and what problems it solves.
+            </p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Feature 1</h3>
+                    <p>Description of your first main feature.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Feature 2</h3>
+                    <p>Description of your second main feature.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Feature 3</h3>
+                    <p>Description of your third main feature.</p>
+                </div>
+            </div>
+
+            <h2>Getting Started</h2>
+            <p>
+                Provide instructions on how to install and use your project.
+                You can include code snippets, examples, or links to documentation.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Your Project Name. Open source project.</p>
+        </div>
+    </footer>
+</body>
+</html> 
