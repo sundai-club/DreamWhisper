@@ -1,0 +1,13 @@
+# API and server
+fastapi==0.109.0
+uvicorn==0.27.0
+python-multipart==0.0.6
+
+# Audio processing
+pydub==0.25.1
+
+# OpenAI integration
+openai==1.6.1
+
+# Environment variables
+python-dotenv==1.0.0 
