@@ -6,13 +6,12 @@ import shutil
 from datetime import datetime
 
 # Step 1: Initialize environment and configurations
-load_dotenv()
+load_dotenv(override=True) 
 
-# Get OpenAI API key
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("API key is missing. Set OPENAI_API_KEY in your environment variables.")
-
+print(api_key)
 # Initialize OpenAI client
 client = OpenAI(api_key=api_key)
 
